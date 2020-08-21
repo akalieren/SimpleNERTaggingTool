@@ -9,4 +9,4 @@ Just a simple tool for speed up manuel NER labelling process!
 
 ## That's all. I said it is simple!
 
-## Have FUN!!
+### Enjoy... 
