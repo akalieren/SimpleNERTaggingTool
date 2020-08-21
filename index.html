@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple NER Tagging Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 0;
+      background-color: #2c2a2b;
+      padding: 30px;
+      border-radius:10px;
+    }
+    
+    .btn-per{ button:active {
+        outline: none;
+        border: none;
+        margin-right :5px;
+        }
+    }
+
+    .btn-org{ button:active {
+        outline: none;
+        border: none;
+        }
+    }
+
+    .btn-loc { button:active {
+        outline: none;
+        border: none;
+        padding: 0 10px;
+        }
+    }
+
+    [contenteditable] {
+        outline: 0px solid transparent;
+        caret-color: whitesmoke;
+        padding-top: 16px;
+        padding-bottom: 10px;
+        border-radius:10px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .custom-jumbotron {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        line-height: 0.7;
+
+    }
+
+    .custom-jumbotron-bottom {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-right: 30px;
+        line-height: 0.3;
+
+    }
+
+</style>
+
+<body style="background-color:#343233;">
+<div class="jumbotron custom-jumbotron text-left" style="background-color:#343233" outline="none";>
+  <h2 style="color:#fbeee4"> NER Tagging Tool</h2>
+  <p style="color:#fbeee4"> speed up your tagging process! </p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="background-color:#2c2a2b" id="content" contenteditable="true";>
+        <p style="color:#fbeee4" id="paragh"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius pharetra odio, ac consequat mauris pulvinar ac. Nam vitae congue nunc, iaculis vestibulum dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent lacus nulla, pretium in tincidunt id, porta nec dolor. In eros sapien, faucibus non fringilla at, aliquam quis nisl. Curabitur nec tempus ipsum, in lacinia magna. Praesent ut risus ipsum. Cras malesuada nisi sem. Morbi purus leo, sodales et nulla vitae, pulvinar tincidunt tellus. Proin eget dolor non lorem egestas vulputate id eget libero. Proin faucibus ipsum sit amet ex vestibulum tincidunt. Praesent sapien mauris, vulputate vel tempus id, aliquam sit amet sapien. In hendrerit eros in quam vestibulum, a sodales erat egestas. Vivamus dignissim tempus neque, eget convallis lacus varius quis. Nunc suscipit tellus ut ligula venenatis, ac finibus erat tempus. Proin fermentum ut odio in porttitor. Mauris suscipit sit amet tortor posuere condimentum. Nunc id ante sed ante suscipit pretium vel non augue. Quisque a iaculis purus. Donec a metus in mauris fermentum elementum dictum accumsan justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque dapibus porttitor augue, ac volutpat leo condimentum at. Proin ultricies turpis sed ligula laoreet, vel faucibus est placerat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ornare tempor libero nec ultrices. Etiam justo dui, consectetur in odio ut, viverra fringilla tortor. Vestibulum molestie odio vel rhoncus convallis. Suspendisse vitae ullamcorper elit, vitae interdum magna. Aliquam id egestas elit, eu euismod diam. Vestibulum congue lorem a mi tristique, et porta neque eleifend. Nam aliquet, nisi id gravida fringilla, neque arcu viverra nulla, et malesuada odio velit at turpis. Cras maximus quam eu dui efficitur posuere. Vestibulum mollis eros eget aliquet scelerisque. Sed sagittis dolor a pellentesque egestas. Aliquam vestibulum eu tellus a pulvinar. Aenean at cursus nunc, accumsan accumsan quam. Nunc efficitur ante id viverra varius. Cras massa dui, maximus scelerisque turpis ut, gravida luctus orci. Pellentesque fringilla nec augue laoreet egestas. Praesent ut odio aliquet, porttitor justo vel, scelerisque diam. Mauris in ex enim. Aenean quis sapien aliquet diam sollicitudin aliquam. Etiam molestie ultricies auctor. Suspendisse potenti. Vestibulum sed turpis eget libero faucibus iaculis et nec libero. Maecenas eu imperdiet mauris, eu pellentesque elit. Nunc ut tincidunt nulla. Nullam vitae nisi vel metus dignissim consequat sit amet a sapien. Aliquam iaculis vel purus nec tristique. Vestibulum volutpat condimentum erat, non elementum diam congue eget. Cras ultrices justo leo, quis aliquam risus tristique non. Mauris semper, sapien in rutrum tristique, ante ex mollis dui, at pharetra elit turpis nec augue. Pellentesque diam odio, imperdiet et lorem ac, tristique aliquet justo. Duis varius at purus nec cursus. Pellentesque quis felis tristique, porta dui at, dapibus purus. Quisque pellentesque quam eget dapibus sollicitudin. Nullam et luctus metus. Sed hendrerit, odio eu faucibus gravida, nisl mauris efficitur est, eget pellentesque massa turpis id risus. Etiam at lorem viverra, ultrices mi id, efficitur justo. In pellentesque tincidunt enim et finibus. Fusce suscip aximus quam eu dui efficitur posuere. Vestibulum mollis eros eget aliquet scelerisque. Sed sagittis dolor a pellentesque egestas. Aliquam vestibulum eu tellus a pulvinar. Aenean at cursus nunc, accumsan accumsan quam. Nunc efficitur ante id viverra varius. Cras massa dui, maximus scelerisque turpis ut, gravida luctus orci. Pellentesque fringilla nec augue laoreet egestas. Praesent ut odio aliquet, porttitor justo vel, scelerisque diam. Mauris in ex enim. Aenean quis sapien aliquet diam sollicitudin aliquam. Etiam molestie ultricies auctor. Suspendisse potenti. Vestibulum sed turpis eget libero faucibus iaculis et nec libero. Maecenas eu imperdiet mauris, eu pellentesque elit. Nunc ut tincidunt nulla. Nullam vitae nisi vel metus dignissim consequat sit amet a sapien. Aliquam iaculis vel purus nec tristique. Vestibulum volutpat condimentum erat, non elementum diam congue eget. Cras ultrices justo leo, quis aliquam risus tristique non. Mauris semper, sapien in rutrum tristique, ante ex mollis dui, at pharetra elit turpis nec augue. Pellentesque diam odio, imperdiet et lorem ac, tristique aliquet justo. Duis varius at purus nec cursus. Pellentesque quis felis tristique, porta dui at, dapibus purus. Quisque pellentesque quam eget dapibus sollicitudin. Nullam et luctus metus. Sed hendrerit, odio eu faucibus gravida, nisl mauris efficitur est, eget pellentesque massa turpis id risus. Etiam at lorem viverra, ultrices mi id, efficitur justo. In pellentesque tincidunt enim et finibus. Fusce suscip aximus quam eu dui efficitur posuere. Vestibulum mollis eros eget aliquet scelerisque. Sed sagittis dolor a pellentesque egestas. Aliquam vestibulum eu tellus a pulvinar. Aenean at cursus nunc, accumsan accumsan quam. Nunc efficitur ante id viverra varius. Cras massa dui, maximus scelerisque turpis ut, gravida luctus orci. Pellentesque fringilla nec augue laoreet egestas. Praesent ut odio aliquet, porttitor justo vel, scelerisque diam. Mauris in ex enim. Aenean quis sapien aliquet diam sollicitudin aliquam. Etiam molestie ultricies auctor. Suspendisse potenti. Vestibulum sed turpis eget libero faucibus iaculis et nec libero. Maecenas eu imperdiet mauris, eu pellentesque elit. Nunc ut tincidunt nulla. Nullam vitae nisi vel metus dignissim consequat sit amet a sapien. Aliquam iaculis vel purus nec tristique. Vestibulum volutpat condimentum erat, non elementum diam congue eget. Cras ultrices justo leo, quis aliquam risus tristique non. Mauris semper, sapien in rutrum tristique, ante ex mollis dui, at pharetra elit turpis nec augue. Pellentesque diam odio, imperdiet et lorem ac, tristique aliquet justo. Duis varius at purus nec cursus. Pellentesque quis felis tristique, porta dui at, dapibus purus. Quisque pellentesque quam eget dapibus sollicitudin. Nullam et luctus metus. Sed hendrerit, odio eu faucibus gravida, nisl mauris efficitur est, eget pellentesque massa turpis id risus. Etiam at lorem viverra, ultrices mi id, efficitur justo. In pellentesque tincidunt enim et finibus. Fusce suscipit condimentum elit, id auctor urna scelerisque vel. Duis semper in ex at accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor non dolor ac euismod. Fusce fermentum risus vitae nibh molestie, ac hendrerit augue vulputate. Mauris ultrices rhoncus porttitor. Ut odio risus, vehicula a nisi sodales, commodo interdum massa. Suspendisse venenatis nec felis finibus tempus. Quisque consectetur arcu metus, id pretium neque vulputate vitae. Donec mollis quam diam, eu porttitor urna dignissim non. Ut ligula dui, gravida eget bibendum id, commodo in nisi..</p>
+    </div>
+    &nbsp;
+    <div class="sticky" style="text-align: left">
+	<button type="button" class="btn btn-per" id="btn-per" style="font-weight:bold; background-color:#FFD152; color:#343233;">PERSON</button>
+    &nbsp;
+    <button type="button" class="btn btn-org" id="btn-org" style="font-weight:bold; background-color:#FF4575; color:#343233; ">ORGANIZATION</button>
+    &nbsp;
+    <button type="button" class="btn btn-loc" id="btn-loc" style="font-weight:bold; background-color:#3864FF; color:#343233;">LOCATION</button>
+  </div>
+</div>
+<div class="jumbotron custom-jumbotron-bottom text-left" style="background-color:#343233" outline="none";> </div>
+</body>
+
+<script>
+$( document ).ready(function() {
+    console.log( "READY!" );
+});
+
+var selectedWord = '';
+var selectionObject;
+
+document.getElementById('btn-per').onclick = function(){
+    var button = document.getElementById('btn-per')
+    sel = window.getSelection();
+    string = window.getSelection().toString();
+    range = sel.getRangeAt(0);
+    range.deleteContents();
+    var replacementText = "<b_enamex TYPE=\"PERSON\">" + string +"<e_enamex>";
+    range.insertNode(document.createTextNode(replacementText));
+};
+
+document.getElementById('btn-org').onclick = function(){
+    sel = window.getSelection();
+    string = window.getSelection().toString();
+    range = sel.getRangeAt(0);
+    range.deleteContents();
+    var replacementText = "<b_enamex TYPE=\"ORGANIZATION\">" + string +"<e_enamex>";
+    range.insertNode(document.createTextNode(replacementText));
+};
+
+document.getElementById('btn-loc').onclick = function(){
+    sel = window.getSelection();
+    string = window.getSelection().toString();
+    range = sel.getRangeAt(0);
+    range.deleteContents();
+    var replacementText = "<b_enamex TYPE=\"LOCATION\">" + string +"<e_enamex>";
+    range.insertNode(document.createTextNode(replacementText));
+};
+
+
+</script>
+</html>
+
