@@ -1,6 +1,6 @@
 # SIMPLE NER TAGGING TOOL
 
-Just a simple tool for speed up manuel NER labelling process!
+Just a simple tool for speed up manual NER labeling process!
 
 ## Quick Tutorial
 
